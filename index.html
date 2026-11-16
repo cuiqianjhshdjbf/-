@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5f2">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="大车拍摄">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <title>大车拍摄清单</title>
+  <style>
+    :root{--bg:#f5f5f2;--card:#fff;--ink:#17211d;--muted:#78817b;--line:#e8ebe7;--green:#176b4b;--mint:#e3f2e9;--orange:#f3a34b;--shadow:0 8px 28px #1b30200b}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;color:inherit}
+    .wrap{max-width:720px;margin:auto;padding:20px 16px calc(48px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;justify-content:space-between;margin:8px 2px 20px}.brand{font-size:13px;color:var(--green);font-weight:750;letter-spacing:.08em}.iconbtn{border:1px solid var(--line);background:#fff;border-radius:13px;padding:9px 13px;font-size:13px;color:#606b64}
+    h1{font-size:32px;line-height:1.15;letter-spacing:-.04em;margin:0 0 8px}.sub{color:var(--muted);font-size:14px;margin:0 0 20px}.hero{background:var(--green);color:white;border-radius:24px;padding:20px;margin-bottom:20px;box-shadow:var(--shadow)}.hero-row{display:flex;justify-content:space-between;align-items:flex-start}.hero-kicker{font-size:12px;color:#c7e1d2}.hero-count{font-size:28px;font-weight:750;letter-spacing:-.04em}.hero-count small{font-size:14px;font-weight:500;color:#c7e1d2;letter-spacing:0}.round{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#ffffff1b;font-size:22px;font-weight:700}.bar{height:6px;background:#ffffff35;border-radius:9px;margin-top:16px;overflow:hidden}.bar i{display:block;height:100%;background:#c2f1d3;border-radius:9px;width:0;transition:width .25s}.hero-foot{font-size:12px;color:#d2e7da;margin-top:9px}.safety{display:flex;gap:11px;align-items:flex-start;background:#fff4df;border:1px solid #f5e5c6;border-radius:16px;padding:13px 15px;margin:0 0 24px;color:#704d1c;font-size:13px}.safety b{display:block;font-size:14px;margin-bottom:2px}.section{margin:0 0 21px}.section-head{display:flex;align-items:center;gap:11px;padding:0 3px 10px}.num{width:30px;height:30px;border-radius:10px;background:var(--mint);color:var(--green);display:grid;place-items:center;font-weight:750;font-size:13px}.section-title{font-weight:750;font-size:17px}.section-meta{margin-left:auto;color:#929a94;font-size:12px}.list{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}.item{display:flex;gap:13px;align-items:flex-start;padding:15px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}.item:last-child{border-bottom:0}.item:active{background:#f8faf8}.check{appearance:none;flex:0 0 24px;width:24px;height:24px;border:1.7px solid #cbd2cc;border-radius:8px;background:white;margin:1px 0 0;display:grid;place-items:center;cursor:pointer}.check:checked{background:var(--green);border-color:var(--green)}.check:checked:after{content:"✓";color:white;font-weight:800;font-size:15px;line-height:1}.item-copy{min-width:0;flex:1}.item-title{font-weight:650;font-size:15px;line-height:1.4}.item-detail{color:var(--muted);font-size:13px;line-height:1.45;margin-top:4px}.item.done .item-title{text-decoration:line-through;color:#8a938d}.item.done .item-detail{color:#a5ada7}.tag{flex:0 0 auto;font-size:10px;color:#768078;background:#f1f4f1;padding:3px 7px;border-radius:7px;margin-top:2px}.tag.say{color:#875a17;background:#fff2d9}.tag.view{color:#416b83;background:#eaf4f8}.end{text-align:center;color:#9ba39d;font-size:12px;padding:5px}
+    .iconbtn{min-height:44px}
+    .guide{background:#eaf3ed;border:1px solid #d8e9dd;border-radius:18px;padding:15px 16px;margin:-9px 0 22px;color:#315342}.guide strong{display:block;color:#1e4935;font-size:15px;margin-bottom:4px}.guide p{margin:4px 0;font-size:13px;line-height:1.55}.guide details{margin-top:10px;border-top:1px solid #cfe1d4;padding-top:9px}.guide summary{font-size:13px;font-weight:700;cursor:pointer;min-height:36px;display:flex;align-items:center}.prompt{background:#fff;border-radius:12px;padding:11px 12px;margin-top:8px;color:#46544b;font-size:13px;line-height:1.65}.prompt b{color:#284936}.copytip{font-size:11px;color:#718078;margin-top:6px}
+    @media(max-width:390px){.wrap{padding-left:12px;padding-right:12px}.tag{font-size:9px;padding:3px 5px}.item{gap:10px;padding-left:12px;padding-right:12px}}
+    @media(min-width:600px){.wrap{padding-top:32px}.hero{padding:23px 25px}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top"><div class="brand">ROAD FILM · 拍摄备忘</div><button class="iconbtn" id="reset">新一趟 · 重置</button></div>
+  <h1>大车拍摄清单</h1><p class="sub">拍一个，勾一个。素材有头有尾，剪辑就有故事。</p>
+  <section class="hero" aria-live="polite"><div class="hero-row"><div><div class="hero-kicker">本趟拍摄进度</div><div class="hero-count"><span id="doneCount">0</span><small> / <span id="totalCount">31</span> 项完成</small></div></div><div class="round" id="progressIcon">▶</div></div><div class="bar"><i id="progressBar"></i></div><div class="hero-foot" id="progressText">从出发前开始，按顺序记录这一趟</div></section>
+  <aside class="safety"><span>⚠️</span><div><b>先安全，再拍摄</b>行车时不要拿手机。需要拍摄、自拍或检查画面时，请先安全停车。</div></aside>
+  <section class="guide">
+    <strong>目标：剪成 15–20 分钟的一趟运输故事</strong>
+    <p>这 31 项是拍摄提醒，不是 31 个几秒钟的镜头。每个重要过程多拍一段完整动作；停车后补口播。素材宁可多留，剪辑时再挑。</p>
+    <p>把故事讲完整：今天跑什么 → 怎么装车检查 → 路上经过什么 → 遇到什么状况 → 怎么休息 → 最后到哪儿。</p>
+    <details>
+      <summary>不知道口播说什么？点开照着说</summary>
+      <div class="prompt"><b>出发：</b>“我现在在___，今天从___开到___，车上拉的是___。现在准备出发，路上有情况我再跟你们说。”</div>
+      <div class="prompt"><b>停车休息：</b>“我刚开了___小时，现在到___休息一下。前面路况___，还剩___公里，等会儿继续走。”</div>
+      <div class="prompt"><b>遇到状况：</b>“刚才遇到___，所以先停下来处理。现在我准备___，弄好以后再继续往___走。”</div>
+      <div class="prompt"><b>到达：</b>“今天从___开到___，跑了___公里。路上最折腾的是___，现在到地方了，今天先到这儿。”</div>
+      <div class="copytip">只要填空说事实；开车时不口播、不操作手机。</div>
+    </details>
+  </section>
+  <div id="sections"></div>
+  <div class="end">完成一趟后点右上角「新一趟 · 重置」</div>
+</main>
+<script>
+const sections=[
+ {title:'出发前',items:[['车外出发','手机固定在安全位置，拍你走向驾驶室、开门上车。','第三视角'],['上车细节','拍拿钥匙、开车门、系安全带；每个动作单独一段。','第一视角'],['启动车辆','拍仪表盘亮起、调整后视镜、开始导航。','近景'],['今天跑哪趟','在车旁说出发地、目的地、货物和预计行程。','口播'],['整车和货物','拍车头、车身、车尾和货物全景。','空镜']]},
+ {title:'装货与检查',items:[['货物全景','从货物一端缓慢扫到另一端，交代这趟运什么。','空镜'],['货物细节','拍轮胎、绑带、篷布、车门锁等关键细节。','近景'],['检查过程','固定手机，拍你检查货物、拉绑带或盖篷布。','第三视角'],['出发确认','停车状态下说货物已检查，接下来准备出发。','口播'],['锁好收尾','拍绑带拉紧、锁扣扣上或车门关好。','近景']]},
+ {title:'一路上',items:[['车内行驶画面','手机提前固定在不挡视线的位置，拍方向盘和前方道路。','第一视角'],['车辆驶离','停车时把手机放稳，拍大车驶离画面。','空镜'],['路上变化','停车后拍路牌、收费站、隧道或沿途地貌。','空镜'],['中途报个平安','停车休息时说开了多久、到哪儿了、还剩多远。','口播'],['导航或里程','停车时拍导航路线或里程，注意别拍到隐私。','近景'],['停车全景','拍服务区或安全停车区里的车，再补车轮和车头细节。','空镜']]},
+ {title:'路上有状况',items:[['先交代现场','安全停车后拍现场全景，让人看明白发生什么。','空镜'],['补关键细节','拍堵车、施工标志、天气或需要处理的部位。','近景'],['说明情况','停车后说发生了什么、准备怎么处理。','口播'],['记录处理过程','手机固定好，拍检查或处理动作；不要边开车边拍。','第三视角'],['事情解决了','拍恢复通行或重新上路，给这一段一个收尾。','空镜']]},
+ {title:'吃饭和休息',items:[['休息地点','拍服务区、饭店或停车位置环境。','空镜'],['吃饭细节','拍点餐、端菜、倒水或打开饭盒。','近景'],['吃饭或休息','手机固定在桌边，记录一小段日常。','第三视角'],['说说今天','说开了多久、跑了多少、接下来还有什么安排。','口播'],['收拾驾驶室','停车后拍整理车内、准备休息。','第一视角']]},
+ {title:'到达目的地',items:[['目的地标志','拍路牌或场地入口，先交代地点。','空镜'],['车辆到达','固定手机在安全位置，拍大车驶入或停靠。','第三视角'],['到达细节','停车后拍仪表、里程或下车动作。','近景'],['收车总结','说从哪到哪、跑了多少公里、路上最折腾什么。','口播'],['结尾全景','拍车、人和目的地全景，留几秒结束。','空镜']]}
+];
+const key='truck-shot-checklist-v1';
+let checked=JSON.parse(localStorage.getItem(key)||'{}');
+const root=document.getElementById('sections');let id=0;
+sections.forEach((s,si)=>{const section=document.createElement('section');section.className='section';const head=document.createElement('div');head.className='section-head';head.innerHTML=`<span class="num">${String(si+1).padStart(2,'0')}</span><span class="section-title">${s.title}</span><span class="section-meta" data-section="${si}"></span>`;const list=document.createElement('div');list.className='list';s.items.forEach(([title,detail,tag])=>{const n=id++;const row=document.createElement('label');row.className='item';row.dataset.id=n;const cb=document.createElement('input');cb.type='checkbox';cb.className='check';cb.checked=!!checked[n];const copy=document.createElement('div');copy.className='item-copy';copy.innerHTML=`<div class="item-title">${title}</div><div class="item-detail">${detail}</div>`;const badge=document.createElement('span');badge.className='tag'+(tag==='口播'?' say':tag==='第一视角'||tag==='第三视角'?' view':'');badge.textContent=tag;row.append(cb,copy,badge);list.append(row)});section.append(head,list);root.append(section)});
+document.getElementById('totalCount').textContent=id;
+function update(){const boxes=[...document.querySelectorAll('.check')],done=boxes.filter(x=>x.checked).length;document.getElementById('doneCount').textContent=done;document.getElementById('progressBar').style.width=(done/boxes.length*100)+'%';document.getElementById('progressIcon').textContent=done===boxes.length?'✓':done?'↗':'▶';document.getElementById('progressText').textContent=done===boxes.length?'这趟素材拍齐了，可以开始剪辑！':done?`已经拍了 ${done} 项，继续记录这一趟`:'从出发前开始，按顺序记录这一趟';sections.forEach((s,si)=>{const start=sections.slice(0,si).reduce((a,x)=>a+x.items.length,0);const count=s.items.filter((_,j)=>boxes[start+j].checked).length;document.querySelector(`[data-section="${si}"]`).textContent=`${count}/${s.items.length}`});localStorage.setItem(key,JSON.stringify(Object.fromEntries(boxes.map((x,i)=>[i,x.checked]).filter(x=>x[1]))));document.querySelectorAll('.item').forEach(x=>x.classList.toggle('done',x.querySelector('.check').checked))}
+document.querySelectorAll('.check').forEach(x=>x.addEventListener('change',update));document.getElementById('reset').addEventListener('click',()=>{if(confirm('开始新一趟？当前勾选进度会清空。')){checked={};document.querySelectorAll('.check').forEach(x=>x.checked=false);update();window.scrollTo({top:0,behavior:'smooth'})}});update();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body>
+</html>
